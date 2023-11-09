@@ -7,7 +7,7 @@ const AboutUs = () => {
           <div className="inner">
             <div className="row">
               <div className="span8">
-                <h2>Who we are</h2>
+                <h1>About us</h1>
                 <figure className="img-polaroid margin2 pull-left"><img src="img/fisherman.jpg" alt="" /></figure>
                 
                 <h4>The best fishing blog</h4>

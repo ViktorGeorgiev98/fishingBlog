@@ -67,3 +67,26 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* App.css */
+body {
+  background-image: url('https://i.redd.it/23xc9wvdgy071.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+/* styles.css */
+body p,
+body span,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: white;
+}
+
+

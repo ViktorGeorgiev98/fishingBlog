@@ -40,3 +40,43 @@
 .read-the-docs {
   color: #888;
 }
+
+/* App.css */
+.App {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: filter 0.5s;
+}
+
+/* App.css */
+/* .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.redd.it/23xc9wvdgy071.jpg');
+  background-size: cover;
+  z-index: -1; /* Place it behind other content */
+/* } */ */
+
+/* styles.css */
+/* styles.css */
+p, span, h1, h2, h3, h4, h5, h6 {
+  color: black !important;
+}
+
+
+/* styles.css */
+img {
+  max-width: 100%;
+  max-height: auto;
+}
+
+/* styles.css */
+p, span {
+  font-size: 1.1em; /* Adjust the size as needed */
+}
+

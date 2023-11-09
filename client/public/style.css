@@ -4,7 +4,7 @@
 
 @import 'grid.css';
 
-@import './font/font-awesome.css';
+@import '../public//font/';
 /*------ template stylization ------*/
 body {
   background: #1b1c1b;
@@ -1098,7 +1098,7 @@ footer p a {
 /*end additional Classes*/
 /*Core variables and mixins*/
 .clearfix {
-  *zoom: 1;
+  zoom: 1;
 }
 .clearfix:before,
 .clearfix:after {
