@@ -14,14 +14,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
-}
+} */
 
 body {
   margin: 0;
@@ -79,7 +79,7 @@ body {
 
 /* styles.css */
 body p,
-body span,
+body span,v
 body h1,
 body h2,
 body h3,
@@ -116,8 +116,8 @@ body h6 {
 
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 15px 0;
+  font-size: 14px;
   color: #fff;
   margin-bottom: 30px;
   border: none;
@@ -125,12 +125,13 @@ body h6 {
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   position: absolute;
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 14px;
   color: green;
   pointer-events: none;
   transition: .5s;
@@ -141,7 +142,7 @@ body h6 {
   top: -20px;
   left: 0;
   color: white;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .login-box button {
@@ -164,7 +165,7 @@ body h6 {
 
 .login-box button:hover {
   background: green;
-  color:green;
+  color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4,
               0 0 25px #03e9f4,
@@ -253,6 +254,7 @@ body h6 {
 }
 
 
+
 /* Add this to your global styles or footer-specific styles */
 /* Add this to your global styles or footer-specific styles */
 .footer {
@@ -263,6 +265,8 @@ body h6 {
   padding: 10px;
   text-align: center;
 }
+
+
 
 
 

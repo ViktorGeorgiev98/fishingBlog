@@ -38,7 +38,7 @@ const Register = () => {
       <label>Email</label>
     </div>
     <div className="user-box">
-      <input type="password" name="password" required="" onChange={(e) => setPassword(e.currentTarget)} />
+      <input type="password"  name="password" required="" onChange={(e) => setPassword(e.currentTarget)} />
       <label>Password</label>
     </div>
     <div className="user-box">
