@@ -131,64 +131,44 @@ button {
 
 
 
-Reset box-sizing to include padding and border in the total width and height
+/* Reset box-sizing to include padding and border in the total width and height */
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 /* Basic styling for the navigation bar */
-/* Basic styling for the navigation bar */
-.nav {
+.navbar {
   background-color: black;
-  width: 100%; /* Use a fixed pixel width or adjust percentage as needed */
-  position: fixed;
-  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px; /* Adjust padding as needed */
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* left: 0; */
   z-index: 1000;
 }
 
 /* Style for the links */
-.nav a {
+.navbar a {
   color: white;
   text-decoration: none;
-  font-size: 24px; /* Adjust the font size as needed */
-  margin: 0 15px; /* Add margin for spacing between links */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  font-size: 18px;
+  margin: 0 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Add hover effect for better user experience */
-/* Stronger hover effect */
-.nav a:hover {
-  background-color: #ffcc00; /* Change background color on hover to a noticeable color */
-  color: black; /* Change text color on hover */
-}
-
-/* Style for the nested ul */
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-/* Style for the li elements in the nested ul */
-.nav li {
-  margin: 0;
-  padding: 0;
+.navbar a:hover {
+  background-color: #555;
+  color: #ffcc00;
 }
 
 /* Style for the dropdown container */
 .dropdown {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
   position: relative;
-  cursor: pointer;
-  /* Add more styles as needed */
 }
 
 /* Style for the dropdown content */
@@ -199,15 +179,7 @@ Reset box-sizing to include padding and border in the total width and height
   left: 0;
   background-color: #333;
   min-width: 160px;
-  z-index: 1;
-  /* Add more styles as needed */
 }
-
-/* Show the dropdown content when dropdown is open */
-.dropdown.open .dropdown-content {
-  display: block;
-}
-
 
 /* Style for the dropdown links */
 .dropdown-content a {
@@ -217,20 +189,7 @@ Reset box-sizing to include padding and border in the total width and height
   text-decoration: none;
 }
 
-.dropdown-content span {
-  color: white;
-  text-decoration: none;
-  font-size: 24px; /* Adjust the font size as needed */
-  margin: 0 15px; /* Add margin for spacing between links */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
-}
-
 /* Show the dropdown content when dropdown is open */
-.dropdown.open .dropdown-content {
+.dropdown:hover .dropdown-content {
   display: block;
 }
-
-
-
-
-
