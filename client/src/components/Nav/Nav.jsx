@@ -1,32 +1,52 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from 'react-router-dom'
 const Nav = () => {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-    const toggleDropdown = (e) => {
-        e.preventDefault();
-        setDropdownOpen(!isDropdownOpen);
-    };
+    
 
     return (
         <nav className="navbar">
-      <Link to="/">Home</Link>
-      <Link to="/posts">Posts</Link>
-      <Link to="/myProfile">My Profile</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/about">About</Link>
-      <Link to="/blog">Blog</Link>
-      <div className="dropdown">
-        <Link to="/species">Species</Link>
-        <div className="dropdown-content">
-          <Link to="/pike">Pike</Link>
-          <Link to="/zander">Zander</Link>
-          <Link to="/perch">Perch</Link>
-        </div>
-      </div>
-      <Link to="/logout">Logout</Link>
-    </nav>
+            <div className='container'>
+            <div className='logo'>
+                <Link to="/">Home</Link>
+            </div>
+            <div className='nav-elements'>
+                <ul>
+                <li>
+                    <Link to="/posts">Posts</Link>
+                </li>
+                <li>
+                    <Link to="/myProfile">My Profile</Link>
+                </li>
+                <li>
+                    <Link to="/register">Register</Link>
+                </li>
+                <li>
+                    <Link to="/login">Login</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/blog">Blog</Link>
+                </li>
+                <li>
+                    <div className="dropdown">
+                    <Link to="/species">Species</Link>
+                    <div className="dropdown-content">
+                    <Link to="/pike">Pike</Link>
+                    <Link to="/zander">Zander</Link>
+                    <Link to="/perch">Perch</Link>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <Link to="/logout">Logout</Link>
+                </li>
+                </ul>
+            </div>
+
+            </div>
+        </nav>
   );
    
 }
