@@ -4,6 +4,7 @@
 // import '../public/jquery.fancybox.css';
 // import '../public/preview.css';
 // import '../public/style.css';
+
 import './App.css'
 import Error404NotFound from './components/404/Error404NotFound';
 import AboutUs from './components/AboutUs/AboutUs';
@@ -18,6 +19,7 @@ import { Routes, Route } from 'react-router-dom';
 import MyProfile from './components/MyProfile/MyProfile';
 import Blog from './components/Blog/Blog';
 import Logout from './components/Logout/Logout';
+import CreatePostPage from './components/Create/CreatePostPage';
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
         <Route path='/pike' element={<Pike />} />
         <Route path='/logout' element={<Logout />} />
         <Route path='/species'/>
+        <Route path='/posts/create' element={<CreatePostPage />} />
         <Route path='*' element={<Error404NotFound />} />
       </Routes>
       {/* <Posts /> */}

@@ -73,6 +73,7 @@ body {
   background-image: url('https://i.redd.it/23xc9wvdgy071.jpg');
   background-size: 100%;
   background-attachment: fixed;
+  /* background: transparent; */
   margin: 0; /* Remove default body margin */
   padding: 0; /* Remove default body padding */
 }
@@ -260,7 +261,7 @@ body h6 {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   padding: 10px;
   text-align: center;

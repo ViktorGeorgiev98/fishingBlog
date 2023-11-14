@@ -128,7 +128,7 @@ button {
 }
 
 
-
+/* NAV BAR */
 
 /* Reset default margin and padding */
 body, ul {
@@ -138,7 +138,7 @@ body, ul {
 
 /* Style for the header */
 header {
-  background-color: black;
+  background-color: green;
   color: white;
   position: fixed;
   width: 100%; /* Adjust the width as needed */
@@ -155,6 +155,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+}
+header h1 a {
+  color: white;
 }
 
 /* Logo styles */
@@ -189,7 +192,7 @@ nav a:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: black;
+  background-color: green;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -231,4 +234,93 @@ nav a.active {
 #user a:hover,
 #guest a:hover {
   color: #ffd700; /* Bright yellow */
+}
+
+
+
+/* About us */
+
+
+
+/* Create post form css */
+
+/* Basic styling */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('your-background-image.jpg'); /* Replace with your actual background image URL */
+  background-size: cover;
+  font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
+}
+
+/* Styling for the form container */
+.create-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Black with transparency */
+  padding: 40px; /* Increase padding for a square-based appearance */
+  margin: 20px;
+  border-radius: 10px;
+  animation: fadeInUp 1.5s ease-in-out; /* Adjusted animation duration for a faster fadeInUp effect */
+}
+
+/* Animation keyframes for fadeInUp effect */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px); /* Start the animation from a higher position */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Styling for the form labels */
+.create-box label {
+  display: block;
+  margin-bottom: 10px; /* Increase margin for better spacing */
+  font-size: 18px; /* Adjust font size as needed */
+  color: white;
+}
+
+/* Styling for the form inputs */
+.create-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; /* Increase margin for better spacing */
+  font-size: 16px; /* Adjust font size as needed */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.7); /* Set background color to match the form container */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for smoother effects */
+}
+
+/* Styling for the form inputs on hover and focus */
+/* Styling for the form inputs on hover and focus */
+.create-box input:hover {
+  background-color: #00FF00; /* Green color on hover and focus */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4); /* Glow effect */
+  transform: scale(1.15); /* Slight scale effect on hover and focus */
+}
+
+
+
+/* Styling for the submit button */
+.create-box button.btn-submit {
+  background-color: #4caf50; /* Green background color */
+  color: white;
+  padding: 15px 20px; /* Adjust padding for a square-based appearance */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for the submit button on hover */
+.create-box button.btn-submit:hover {
+  background-color: orange; /* Darker orange on hover */
+  color: white; /* Change text color on hover */
+  transform: scale(1.1); /* Increase the size on hover */
+  border-color: white; /* Change border color on hover */
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Add a shadow on hover */
 }

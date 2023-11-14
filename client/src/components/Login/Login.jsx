@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const onSubmitLoginHandler = (e) => {
         e.preventDefault();
@@ -13,6 +16,7 @@ const Login = () => {
             return alert('All fields are mandatory!!!');
         }
         console.log({email, password});
+        navigate('/');
     }
 
     return (

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
     const [username, setUsername] = useState('');
+    const navigate = useNavigate();
 
 
     const onSubmitRegisterHandler = (e) => {
@@ -21,6 +23,7 @@ const Register = () => {
             return alert('Password and repeat password must be the same!!!');
         }
         console.log({username, email, password, rePassword});
+        navigate('/login')
     }
 
 

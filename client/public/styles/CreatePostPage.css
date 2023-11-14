@@ -1,0 +1,72 @@
+/* Basic styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('your-background-image.jpg'); /* Replace with your actual background image URL */
+    background-size: cover;
+    font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
+  }
+  
+  /* Styling for the form container */
+  .create-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Black with transparency */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    animation: fadeInUp 0.5s ease; /* Animation for fadeInUp effect */
+  }
+  
+  /* Animation keyframes for fadeInUp effect */
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Styling for the form labels */
+  .create-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px; /* Adjust font size as needed */
+    color: white;
+  }
+  
+  /* Styling for the form inputs */
+  .create-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px; /* Adjust font size as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Styling for the form inputs when clicked */
+  .create-box input:focus {
+    background-color: #fff; /* Change to your desired color */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.7); /* Greenish box-shadow effect on focus */
+  }
+  
+  /* Styling for the submit button */
+  .create-box button.btn-submit {
+    background-color: #4caf50; /* Green background color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styling for the submit button on hover */
+  .create-box button.btn-submit:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  

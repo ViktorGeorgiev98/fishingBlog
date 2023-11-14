@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AboutUs = () => {
     return (
         <div id="wrapper">
@@ -16,6 +18,7 @@ const AboutUs = () => {
                         Here you can create a profile and post any catches that you have, write blogs and like and comment other peoples posts.
                         This is a place where you can exchange valuable knowledge about this amazing hobby.
                     </span>
+                    <Link to='/register'>If this is something you like, feel free to register.</Link>
                 </p>
               </div>
             </div>
