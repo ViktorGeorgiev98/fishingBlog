@@ -131,24 +131,26 @@ button {
 
 
 /* Reset default margin and padding */
-/* body, ul {
+body, ul {
   margin: 0;
   padding: 0;
-} */
+}
 
-/* Style for the navbar */
-.navbar {
+/* Style for the header */
+header {
   background-color: black;
   color: white;
-  /* position: fixed; */
-  width: 75%;
-  /* top: 0; */
+  position: fixed;
+  width: 100%; /* Adjust the width as needed */
+  top: 0;
+  right: 0;
   height: 40px; /* Adjust the height as needed */
   z-index: 1000; /* Ensures it's above other elements */
+  box-sizing: border-box; /* Include padding and borders in the total width and height */
 }
 
 /* Container styles */
-.container {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,29 +158,24 @@ button {
 }
 
 /* Logo styles */
-.logo {
+h1 {
   font-size: 1.5em;
 }
 
 /* Navigation element styles */
-.nav-elements ul {
-  list-style: none;
+nav {
   display: flex;
 }
 
-.nav-elements ul li {
-  margin: 0 10px;
-}
-
-/* Bright effect on hover */
-.nav-elements ul li a {
+nav a {
   color: white;
   text-decoration: none;
+  margin: 0 10px;
   font-size: 18px; /* Adjust font size as needed */
   transition: color 0.3s ease; /* Smooth transition */
 }
 
-.nav-elements ul li a:hover {
+nav a:hover {
   color: #ffd700; /* Bright yellow */
 }
 
@@ -212,21 +209,26 @@ button {
   display: block;
 }
 
+/* User and guest sections */
+#user, #guest {
+  display: flex;
+}
+
+#user a,
+#guest a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
 /* Styling for active link */
-.nav-elements ul li a.active {
+nav a.active {
   color: yellow;
 }
 
-/* Home should be white with hover effect */
-.nav-elements ul li:first-child a {
-  color: white;
-}
-
-.nav-elements ul li:first-child a:hover {
-  color: #ffd700;
-}
-
-/* Remove order property to prevent shifting to the left */
-.nav-elements ul li:first-child {
-  order: -1;
+/* Additional styling for user and guest sections */
+#user a:hover,
+#guest a:hover {
+  color: #ffd700; /* Bright yellow */
 }
