@@ -1,0 +1,99 @@
+/* Style for the header */
+header {
+    background-color: green;
+    color: white;
+    position: fixed;
+    width: 100%; /* Adjust the width as needed */
+    top: 0;
+    right: 0;
+    height: 40px; /* Adjust the height as needed */
+    z-index: 1000; /* Ensures it's above other elements */
+    box-sizing: border-box; /* Include padding and borders in the total width and height */
+  }
+  
+  /* Container styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+  }
+  header h1 a {
+    color: white;
+  }
+  
+  /* Logo styles */
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  /* Navigation element styles */
+  nav {
+    display: flex;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px; /* Adjust font size as needed */
+    transition: color 0.3s ease; /* Smooth transition */
+  }
+  
+  nav a:hover {
+    color: #ffd700; /* Bright yellow */
+  }
+  
+  /* Dropdown styles */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: green;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #333; /* Darker background on hover */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* User and guest sections */
+  #user, #guest {
+    display: flex;
+  }
+  
+  #user a,
+  #guest a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  
+  /* Styling for active link */
+  nav a.active {
+    color: yellow;
+  }
+  
+  /* Additional styling for user and guest sections */
+  #user a:hover,
+  #guest a:hover {
+    color: #ffd700; /* Bright yellow */
+  }

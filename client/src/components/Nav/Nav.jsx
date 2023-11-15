@@ -7,7 +7,6 @@ const Nav = () => {
         <header>
         <h1><Link className="home" to="/">Fishing Blog</Link></h1>
         <nav>
-            <Link to='/about'>About</Link>
             <Link to='/blog'>Blog</Link>
             <Link to='/posts'>Posts</Link>
             <Link to='/about'>About</Link>
