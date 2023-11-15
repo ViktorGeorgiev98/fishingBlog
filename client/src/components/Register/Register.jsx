@@ -34,19 +34,19 @@ const Register = () => {
   <form onSubmit={onSubmitRegisterHandler}>
     <div className="user-box">
       <input type="text" name="username" required="" onChange={(e) => setUsername(e.currentTarget)} />
-      <label>Username</label>
+      <label htmlFor="username">Username</label>
     </div>
     <div className="user-box">
       <input type="text" name="email" required="" onChange={(e) => setEmail(e.currentTarget)} />
-      <label>Email</label>
+      <label htmlFor="email">Email</label>
     </div>
     <div className="user-box">
       <input type="password"  name="password" required="" onChange={(e) => setPassword(e.currentTarget)} />
-      <label>Password</label>
+      <label htmlFor="password">Password</label>
     </div>
     <div className="user-box">
       <input type="password" name="rePassword" required="" onChange={(e) => setRePassword(e.currentTarget)} />
-      <label>Repeat password</label>
+      <label htmlFor="rePassword">Repeat password</label>
     </div>
     <button className="btn-submit" type="submit">
         Submit

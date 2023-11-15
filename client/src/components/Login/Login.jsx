@@ -26,11 +26,11 @@ const Login = () => {
       <form onSubmit={onSubmitLoginHandler}>
         <div className="user-box">
           <input type="text" name="email" required="" onChange={(e) => setEmail(e.currentTarget)} />
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
         </div>
         <div className="user-box">
           <input type="password" name="password" required="" onChange={(e) => setPassword(e.currentTarget)} />
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
         </div>
         <button className="btn-submit" type="submit">
             Submit

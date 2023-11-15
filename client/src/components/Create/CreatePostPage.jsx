@@ -79,56 +79,56 @@ const CreatePostPage = () => {
         <h2>Create form</h2>
         <form onSubmit={onCreatePostSubmitHandler}>
           <div className="create-box">
-            <label>Fish species</label>
+            <label htmlFor="fishSpecies">Fish species</label>
             <input type="text" 
             name="fishSpecies" 
             required="" 
             onChange={(e) => setSpecies(e.currentTarget.value)} />
           </div>
           <div className="create-box">
-            <label>Angler name</label>
+            <label htmlFor="anglerName">Angler name</label>
             <input type="text" 
             name="anglerName" 
             required="" 
             onChange={(e) => setAnglerName(e.currentTarget.value)}/>
           </div>
           <div className="create-box">
-            <label>Fish length</label>
+            <label htmlFor="fishLength">Fish length</label>
             <input type="text" 
             name="fishLength" 
             required="" 
             onChange={(e) => setFishLength(e.currentTarget.value)} />
           </div>
           <div className="create-box">
-            <label>Fish weight</label>
+            <label htmlFor="fishWeight">Fish weight</label>
             <input type="text" 
             name="fishWeight" 
             required="" 
             onChange={(e) => setFishWeight(e.currentTarget.value)} />
           </div>
           <div className="create-box">
-            <label>Catch method</label>
+            <label htmlFor="catchMethod">Catch method</label>
             <input type="text" 
             name="catchMethod" 
             required="" 
             onChange={(e) => setMethod(e.currentTarget.value)} />
           </div>
           <div className="create-box">
-            <label>Lure / bait</label>
+            <label htmlFor="lure">Lure / bait</label>
             <input type="text" 
             name="lure" 
             required="" 
             onChange={(e) => setBait(e.currentTarget.value)} />
           </div>
           <div className="create-box">
-            <label>Location</label>
+            <label htmlFor="location">Location</label>
             <input type="text" 
             name="location" 
             required="" 
             onChange={(e) => setLocation(e.currentTarget.value)} />
           </div>
           <div className="create-box">
-            <label>Image url</label>
+            <label htmlFor="imageUrl">Image url</label>
             <input type="text" 
             name="imageUrl" 
             required="" 
