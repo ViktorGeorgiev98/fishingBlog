@@ -35,12 +35,6 @@ function App() {
         <Route path='/posts/create' element={<CreatePostPage />} />
         <Route path='*' element={<Error404NotFound />} />
       </Routes>
-      {/* <Posts /> */}
-      {/* <Register /> */}
-      {/* <Login /> */}
-      {/* <AboutUs /> */}
-      {/* <Pike /> */}
-      {/* <Error404NotFound /> */}
       <Footer />
     </>
   )
