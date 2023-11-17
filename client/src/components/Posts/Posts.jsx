@@ -22,7 +22,8 @@ const Posts = () => {
           {posts.length <= 0 
             ? <p className="no-posts">There are no posts at the moment...</p>
             : posts.map(post => (
-               <PostListElement key={post._id} 
+               <PostListElement key={post._id}
+               id={post._id} 
                imageUrl={post.imageUrl} 
                fishSpecies={post.fishSpecies} 
                anglerName={post.anglerName} 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const PostListElement = (props) => {
@@ -10,7 +11,9 @@ const PostListElement = (props) => {
             <p>Method: {props.catchMethod}</p>
             <p>Lure: {props.lure}</p>
             <p>Location:{props.location}</p>
-            <button className="btn-btn-details">Details</button>
+            <Link to={`/posts/${props.id}/details`}>
+                <button className="btn-btn-details">Details</button>
+            </Link>
         </li>
     )
 }
