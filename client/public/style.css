@@ -3,3 +3,4 @@
 @import "./Root.css";
 @import "../src/components/Register/Register.css";
 @import "../src/components/Login/Login.css";
+@import "../src/components/Posts/PostListElement.css";

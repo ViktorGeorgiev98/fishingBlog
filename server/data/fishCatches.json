@@ -1,0 +1,28 @@
+{
+	"-418bac1a-41c1-4d05-a15e-62bbe458a4ed": {
+            "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+            "fishSpecies": "Zander",
+            "anglerName": "Mitko",
+            "fishLength": "60 cm",
+            "fishWeight": "1.5 kg",
+            "catchMethod": "spinning",
+            "lure": "Savage gear slender shad 11cm",
+            "location": "Malko sharkovo",
+            "imageUrl": "https://www.sportquestholidays.com/wp-content/uploads/2023/03/Species-Spotlight-Zander-H.jpg",
+            "_createdOn": 1700241821254,
+            "_id": "418bac1a-41c1-4d05-a15e-62bbe458a4ed"
+	},
+	"-fcb4f0e5-74c3-4123-b51b-fdec3d75c0b3": {
+		"_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+    "fishSpecies": "Pike",
+    "anglerName": "Ivan",
+    "fishLength": "80 cm",
+    "fishWeight": "2.5 kg",
+    "catchMethod": "spinning",
+    "lure": "Savage gear slender shad 15cm",
+    "location": "Malko sharkovo",
+    "imageUrl": "https://cst.brightspotcdn.com/dims4/default/a71a0b6/2147483647/strip/true/crop/816x544+0+34/resize/840x560!/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2FMr3hBPS9bu4CzVubdWoPyFVPBLo%3D%2F0x0%3A816x612%2F816x612%2Ffilters%3Afocal%28408x306%3A409x307%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F23192366%2Ffotw01_26_22pike.jpg",
+    "_createdOn": 1700241996422,
+    "_id": "fcb4f0e5-74c3-4123-b51b-fdec3d75c0b3"
+	}
+}
