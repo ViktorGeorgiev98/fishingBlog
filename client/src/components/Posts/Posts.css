@@ -1,0 +1,19 @@
+/* Define the animation */
+@keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to list items */
+  .list-posts li {
+    animation: slideUp 0.5s ease-in-out;
+    animation-fill-mode: both;
+    opacity: 0; /* Initial opacity to start with */
+  }
+  
