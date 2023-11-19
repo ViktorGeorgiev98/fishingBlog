@@ -19,7 +19,7 @@ const PostDetails = () => {
 
     // }, []);
 
-    console.log(post);
+    
 
     return (
         <div className="details-container">
@@ -34,6 +34,8 @@ const PostDetails = () => {
           <p><strong>Catch Method:</strong> {post.catchMethod}</p>
           <p><strong>Location:</strong> {post.location}</p>
           <p><strong>Lure Used:</strong> {post.lure}</p>
+          <button className="btn-btn-delete">Delete</button>
+          <button className="btn-btn-edit">Edit</button>
     
           <h2>Comments</h2>
           <form id="commentForm">

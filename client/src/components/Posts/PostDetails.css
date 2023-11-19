@@ -1,0 +1,82 @@
+/* Common styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the details container */
+.details-container {
+  animation: slideUp 1s ease forwards;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+  z-index: 1000;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Heading styles */
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
