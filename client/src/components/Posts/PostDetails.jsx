@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
+// TODO: 
+// 1/ Make the click handlers
+// 2/ The edit handler will be a window popping up on the screen
+// 3/ The delete will be normal
+// 4/ Make use effect for the comments
+// 5/ Make comments post request and update the comments after the request
+// 6/ Make buttons and logic visible for logged in users and owners or no owners respectively
 const PostDetails = () => {
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
@@ -19,6 +27,14 @@ const PostDetails = () => {
 
     // }, []);
 
+
+    async function postEditHandler(e) {
+        const id = e.target.id;
+    }
+
+    async function postDeleteHandler(e) {
+        const id = e.target.id;
+    }
     
 
     return (
@@ -34,8 +50,8 @@ const PostDetails = () => {
           <p><strong>Catch Method:</strong> {post.catchMethod}</p>
           <p><strong>Location:</strong> {post.location}</p>
           <p><strong>Lure Used:</strong> {post.lure}</p>
-          <button className="btn-btn-delete">Delete</button>
-          <button className="btn-btn-edit">Edit</button>
+          <button className="btn-btn-delete" onClick={postDeleteHandler}>Delete</button>
+          <button className="btn-btn-edit" onClick={postEditHandler}>Edit</button>
     
           <h2>Comments</h2>
           <form id="commentForm">
