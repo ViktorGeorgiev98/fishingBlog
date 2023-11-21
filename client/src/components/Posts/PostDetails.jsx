@@ -4,8 +4,8 @@ import EditPostPage from "./EditPostPage";
 
 
 // TODO: 
-// 1/ Make the click handlers
-// 2/ The edit handler will be a window popping up on the screen
+// 1/ Make the click handlers => DONE
+// 2/ The edit handler will be a window popping up on the screen => DONE
 // 3/ The delete will be normal
 // 4/ Make use effect for the comments => DONE
 // 5/ Make comments post request and update the comments after the request
@@ -28,9 +28,13 @@ const PostDetails = () => {
     useEffect(() => {
         fetch(`${baseUrl}/fishCatchesComments`)
         .then(response => response.json())
-        .then(data => setComments(data))
+        .then(data => setComments(data.filter(comment => comment._postId === id)))
         .catch((e) => console.log(e));
     }, []);
+
+    async function postCommentHandler() {
+        const url = `${baseUrl}/fishCatchesComments`;
+    }
 
     async function postEditHandler(e) {
         e.preventDefault();
@@ -61,7 +65,7 @@ const PostDetails = () => {
           <button className="btn-btn-edit" onClick={postEditHandler}>Edit</button>
     
           <h2>Comments</h2>
-          <form id="commentForm">
+          <form id="commentForm" onSubmit={postCommentHandler}>
             <label htmlFor="comment">Leave a comment:</label><br />
             <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br />
             <input type="submit" value="Submit" />
