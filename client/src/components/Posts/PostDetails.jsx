@@ -6,12 +6,13 @@ import { useParams } from "react-router-dom";
 // 1/ Make the click handlers
 // 2/ The edit handler will be a window popping up on the screen
 // 3/ The delete will be normal
-// 4/ Make use effect for the comments
+// 4/ Make use effect for the comments => DONE
 // 5/ Make comments post request and update the comments after the request
 // 6/ Make buttons and logic visible for logged in users and owners or no owners respectively
 const PostDetails = () => {
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
+    const [showComments, setShowComments] = useState(false);
     const { id } = useParams();
     const baseUrl = `http://localhost:3030/data`;
     
@@ -28,10 +29,6 @@ const PostDetails = () => {
         .then(data => setComments(data))
         .catch((e) => console.log(e));
     }, []);
-    // useEffect(() => {
-
-    // }, []);
-
 
     async function postEditHandler(e) {
         e.preventDefault();
@@ -66,8 +63,12 @@ const PostDetails = () => {
             <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br />
             <input type="submit" value="Submit" />
           </form>
+          <button className="btn-show-comments" 
+          onClick={() => setShowComments(!showComments)}>
+            {showComments ? "Hide" : "Show"} comments</button>
           {/* Display comments here */}
-          <div id="comments">
+          {showComments && 
+            <div id="comments">
             {/* Comments will be displayed here */}
             {comments.length > 0 
             ? <ul className="comments">
@@ -82,6 +83,8 @@ const PostDetails = () => {
             </ul>
             : <h2>No comments available</h2>}
           </div>
+          }
+          
         </div>
       );
 }
