@@ -15,6 +15,8 @@ const PostDetails = () => {
     const [comments, setComments] = useState([]);
     const [showComments, setShowComments] = useState(false);
     const [editPopUp, setEditPopUp] = useState(false);
+    const [commentWriter, setCommentWriter] = useState('');
+    const [commentText, setCommentText] = useState('');
     const { id } = useParams();
     const baseUrl = `http://localhost:3030/data`;
     
@@ -32,8 +34,15 @@ const PostDetails = () => {
         .catch((e) => console.log(e));
     }, []);
 
-    async function postCommentHandler() {
+    async function postCommentHandler(e) {
+        e.preventDefault();
         const url = `${baseUrl}/fishCatchesComments`;
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const text = formData.get('comment')
+        if (!name || !text) {
+            return alert('Both name and comment fields are mandatory!');
+        }
     }
 
     async function postEditHandler(e) {
@@ -66,8 +75,10 @@ const PostDetails = () => {
     
           <h2>Comments</h2>
           <form id="commentForm" onSubmit={postCommentHandler}>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" onChange={(e) => setCommentWriter(e.currentTarget.value)} /> 
             <label htmlFor="comment">Leave a comment:</label><br />
-            <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br />
+            <textarea id="comment" name="comment" rows="4" cols="50" onChange={(e) => setCommentText(e.currentTarget.value)}></textarea><br />
             <input type="submit" value="Submit" />
           </form>
           <button className="btn-show-comments" 
