@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import EditPostPage from "./EditPostPage";
 
 
 // TODO: 
@@ -13,6 +14,7 @@ const PostDetails = () => {
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
     const [showComments, setShowComments] = useState(false);
+    const [editPopUp, setEditPopUp] = useState(false);
     const { id } = useParams();
     const baseUrl = `http://localhost:3030/data`;
     
@@ -33,6 +35,7 @@ const PostDetails = () => {
     async function postEditHandler(e) {
         e.preventDefault();
         const id = e.target.id;
+        setEditPopUp(!editPopUp);
     }
 
     async function postDeleteHandler(e) {
@@ -83,6 +86,10 @@ const PostDetails = () => {
             </ul>
             : <h2>No comments available</h2>}
           </div>
+          }
+
+          {editPopUp && 
+            <EditPostPage />
           }
           
         </div>
