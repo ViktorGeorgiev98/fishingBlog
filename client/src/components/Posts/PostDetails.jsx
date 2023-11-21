@@ -13,11 +13,11 @@ const PostDetails = () => {
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
     const { id } = useParams();
-    const url = `http://localhost:3030/data/fishCatches/${id}`;
+    const baseUrl = `http://localhost:3030/data`;
     
 
     useEffect(() => {
-        fetch(url)
+        fetch(`${baseUrl}/fishCatches/${id}`)
         .then(response => response.json())
         .then(data => setPost(data))
         .catch((e) => console.log(e));
@@ -29,10 +29,12 @@ const PostDetails = () => {
 
 
     async function postEditHandler(e) {
+        e.preventDefault();
         const id = e.target.id;
     }
 
     async function postDeleteHandler(e) {
+        e.preventDefault();
         const id = e.target.id;
     }
     
