@@ -9,9 +9,42 @@ const EditPostPage = (props) => {
     const [method, setMethod] = useState('');
     const [location, setLocation] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    
+    async function onEditPostHandler(e) {
+        e.preventDefault();
+        const url = `${props.baseUrl}/fishCatches/${props._id}`
+        const formData = new FormData(e.target);
+        const fishSpecies = formData.get('fishSpecies');
+        const anglerName = formData.get('anglerName');
+        const fishLength = formData.get('fishLength');
+        const fishWeight = formData.get('fishWeight');
+        const bait = formData.get('bait');
+        const method = formData.get('method');
+        const location = formData.get('location');
+        const imageUrl = formData.get('imageUrl');
 
-    async function onEditPostHandler() {
+        if (!fishSpecies || !anglerName || !fishLength || !fishWeight || !bait || !method || !location || !imageUrl) {
+            return alert('All fields are mandatory!');
+        }
 
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json', 
+                  },
+                body: JSON.stringify({fishSpecies, anglerName, fishLength, fishWeight, bait, method, location, imageUrl})
+            })
+
+            if(response.ok) {
+                console.log("PUT request done")
+            } else {
+                throw new Error(response.statusText);
+            }
+        } catch(e) {
+            alert(e);
+            console.log(e);
+        }
     }
 
     return (

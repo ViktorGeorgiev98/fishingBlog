@@ -99,7 +99,9 @@ const PostDetails = () => {
             lure={post.lure}
             imageUrl={post.imageUrl}
             editPopUp={editPopUp} 
-            setEditPopUp={setEditPopUp} />
+            setEditPopUp={setEditPopUp}
+            baseUrl={baseUrl} 
+            _id={post._id}/>
           }
           
         </div>
