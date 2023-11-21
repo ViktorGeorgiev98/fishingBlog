@@ -89,7 +89,17 @@ const PostDetails = () => {
           }
 
           {editPopUp && 
-            <EditPostPage />
+            <EditPostPage 
+            anglerName={post.anglerName} 
+            fishSpecies={post.fishSpecies} 
+            fishLength={post.fishLength} 
+            fishWeight={post.fishWeight} 
+            catchMethod={post.catchMethod} 
+            location={post.location} 
+            lure={post.lure}
+            imageUrl={post.imageUrl}
+            editPopUp={editPopUp} 
+            setEditPopUp={setEditPopUp} />
           }
           
         </div>
