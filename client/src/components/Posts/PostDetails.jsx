@@ -22,7 +22,12 @@ const PostDetails = () => {
         .then(data => setPost(data))
         .catch((e) => console.log(e));
     }, []);
-    // TODO => use effect for comments taken from request
+    useEffect(() => {
+        fetch(`${baseUrl}/fishCatchesComments`)
+        .then(response => response.json())
+        .then(data => setComments(data))
+        .catch((e) => console.log(e));
+    }, []);
     // useEffect(() => {
 
     // }, []);
