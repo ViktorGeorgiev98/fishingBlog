@@ -10,7 +10,14 @@ export const AuthProvider = ( {children }) => {
 
 
     const login = (userData) => {
-        setUser(userData);
+        setUser({
+            username: userData.username,
+            email: userData.email,
+            password: userData.password,
+            accessToken: userData.accessToken,
+            _id: userData._id
+        });
+
         localStorage.setItem('token', user.accessToken)
     }
 
@@ -20,7 +27,7 @@ export const AuthProvider = ( {children }) => {
     }
 
     const isAuthenticated = () => {
-        return !!user
+        return !!user.accessToken
     }
 
     const getAccessToken = () => {

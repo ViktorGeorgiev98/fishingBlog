@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
+import { useAuth } from "../../context/AuthProvider";
 
 const Login = () => {
+    const { user, login, logout, isAuthenticated, getAccessToken } = useAuth(); // mitaka981@abv.bg // 12345
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const onSubmitLoginHandler = (e) => {
+    const onSubmitLoginHandler = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const email = formData.get('email');
@@ -16,6 +18,24 @@ const Login = () => {
             return alert('All fields are mandatory!!!');
         }
         console.log({email, password});
+        
+        try {
+          const response = await fetch("http://localhost:3030/users/login", {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+          });
+        
+          if (response.ok) {
+            const data = await response.json();
+            login(data);
+          } else {
+            throw new Error(response.statusText);
+          }
+        } catch (e) {
+          console.log(e.message);
+          return alert(e.message);
+        }
         navigate('/');
     }
 
