@@ -18,18 +18,21 @@ export const AuthProvider = ( {children }) => {
             accessToken: userData.accessToken,
             _id: userData._id
         }));
-       
+        console.log({user: user})
 
-        localStorage.setItem('token', user.accessToken)
+        localStorage.setItem('token', userData.accessToken)
     }
 
     const logout = () => {
-        setUser({});
+        setUser(previousUser => ({}));
         localStorage.removeItem("token");
     }
 
     const isAuthenticated = () => {
-        return !!user.accessToken
+        const token = localStorage.getItem('token');
+        console.log({token: token}); // Check what value is retrieved from localStorage
+        return !!token;
+        // return !!user.accessToken;
     }
 
     const getAccessToken = () => {
