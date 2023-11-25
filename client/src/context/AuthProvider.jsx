@@ -10,6 +10,7 @@ export const AuthProvider = ( {children }) => {
 
 
     const login = (userData) => {
+        console.log({userData: userData})
         setUser({
             username: userData.username,
             email: userData.email,
