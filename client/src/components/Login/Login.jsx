@@ -28,7 +28,7 @@ const Login = () => {
         
           if (response.ok) {
             const data = await response.json();
-            login(data);
+            await login(data);
           } else {
             throw new Error(response.statusText);
           }
@@ -45,11 +45,11 @@ const Login = () => {
       <h2>Login</h2>
       <form onSubmit={onSubmitLoginHandler}>
         <div className="user-box">
-          <input type="text" name="email" required="" onChange={(e) => setEmail(e.currentTarget)} />
+          <input type="text" name="email"  onChange={(e) => setEmail(e.currentTarget.value)} />
           <label htmlFor="email">Email</label>
         </div>
         <div className="user-box">
-          <input type="password" name="password" required="" onChange={(e) => setPassword(e.currentTarget)} />
+          <input type="password" name="password"  onChange={(e) => setPassword(e.currentTarget.value)} />
           <label htmlFor="password">Password</label>
         </div>
         <button className="btn-submit" type="submit">

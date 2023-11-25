@@ -10,14 +10,15 @@ export const AuthProvider = ( {children }) => {
 
 
     const login = (userData) => {
-        console.log({userData: userData})
-        setUser({
+       
+        setUser(previousUser => ({
             username: userData.username,
             email: userData.email,
             password: userData.password,
             accessToken: userData.accessToken,
             _id: userData._id
-        });
+        }));
+       
 
         localStorage.setItem('token', user.accessToken)
     }
