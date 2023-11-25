@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EditPostPage from "./EditPostPage";
+import { useAuth } from "../../context/AuthProvider";
 
 
 // TODO: 
@@ -19,6 +20,7 @@ const PostDetails = () => {
     const [commentText, setCommentText] = useState('');
     const { id } = useParams();
     const baseUrl = `http://localhost:3030/data`;
+    const { isAuthenticated, getAccessToken, user } = useAuth();
     
 
     useEffect(() => {
@@ -70,17 +72,26 @@ const PostDetails = () => {
           <p><strong>Catch Method:</strong> {post.catchMethod}</p>
           <p><strong>Location:</strong> {post.location}</p>
           <p><strong>Lure Used:</strong> {post.lure}</p>
-          <button className="btn-btn-delete" onClick={postDeleteHandler}>Delete</button>
-          <button className="btn-btn-edit" onClick={postEditHandler}>Edit</button>
-    
-          <h2>Comments</h2>
-          <form id="commentForm" onSubmit={postCommentHandler}>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" onChange={(e) => setCommentWriter(e.currentTarget.value)} /> 
-            <label htmlFor="comment">Leave a comment:</label><br />
-            <textarea id="comment" name="comment" rows="4" cols="50" onChange={(e) => setCommentText(e.currentTarget.value)}></textarea><br />
-            <input type="submit" value="Submit" />
-          </form>
+          {isAuthenticated() && user._id === post._id &&
+             <div className="post-btns">
+                <button className="btn-btn-delete" onClick={postDeleteHandler}>Delete</button>
+                <button className="btn-btn-edit" onClick={postEditHandler}>Edit</button>
+             </div>
+          }
+
+          {isAuthenticated() &&
+            <div>
+              <h2>Comments</h2>
+              <form id="commentForm" onSubmit={postCommentHandler}>
+                <label htmlFor="name">Name</label>
+                <input type="text" name="name" onChange={(e) => setCommentWriter(e.currentTarget.value)} /> 
+                <label htmlFor="comment">Leave a comment:</label><br />
+                <textarea id="comment" name="comment" rows="4" cols="50" onChange={(e) => setCommentText(e.currentTarget.value)}></textarea><br />
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+          }
+          
           <button className="btn-show-comments" 
           onClick={() => setShowComments(!showComments)}>
             {showComments ? "Hide" : "Show"} comments</button>
