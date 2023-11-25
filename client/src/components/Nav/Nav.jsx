@@ -1,15 +1,16 @@
 // import { useState } from "react";
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthProvider';
-import { useEffect } from 'react';
 const Nav = () => {
     const { isAuthenticated, user } = useAuth();
-    let isAuth = isAuthenticated();
     
-
     return (
         <header>
         <h1><Link className="home" to="/">Fishing Blog</Link></h1>
+        {isAuthenticated()
+            && 
+            <p>Welcome {user.username}!</p>
+            }
         <nav>
             <Link to='/posts'>Posts</Link>
             <Link to='/blog'>Blog</Link>
@@ -22,7 +23,7 @@ const Nav = () => {
                 </div>
             </div>
             <Link to='/about'>About</Link>
-            {isAuth
+            {isAuthenticated()
             &&
             <div id="user">
             <Link to="/posts/create">Create Post</Link>
@@ -30,7 +31,7 @@ const Nav = () => {
             <Link to="/logout">Logout</Link>
             </div> 
             }
-            {!isAuth
+            {!isAuthenticated()
             &&
             <div id="guest">
                 <Link to="/login">Login</Link>

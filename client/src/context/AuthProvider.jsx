@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -8,6 +8,13 @@ export const useAuth = () => {
 export const AuthProvider = ( {children }) => {
     const [user, setUser] = useState({});
 
+    useEffect(() => {
+        // Retrieve user data from localStorage on component mount (page load)
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []); // Empty dependency array ensures this effect runs only once on mount
 
     const login = (userData) => {
        
@@ -18,20 +25,24 @@ export const AuthProvider = ( {children }) => {
             accessToken: userData.accessToken,
             _id: userData._id
         }));
-        console.log({user: user})
-
+        localStorage.setItem('user', JSON.stringify(userData));
         localStorage.setItem('token', userData.accessToken)
     }
 
     const logout = () => {
         setUser(previousUser => ({}));
         localStorage.removeItem("token");
+        localStorage.removeItem("user");
     }
 
     const isAuthenticated = () => {
         const token = localStorage.getItem('token');
         console.log({token: token}); // Check what value is retrieved from localStorage
-        return !!token;
+        if (!!token && !!user.accessToken) {
+            return true;
+        } else {
+            return false;
+        }
         // return !!user.accessToken;
     }
 
@@ -39,7 +50,12 @@ export const AuthProvider = ( {children }) => {
         return localStorage.getItem("token");
     }
 
+    const getUsername = () => {
+        return user.username
+    }
+
     const authContextValue = {
+        getUsername,
         user,
         login,
         logout,
