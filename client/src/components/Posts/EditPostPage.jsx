@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useAuth } from "../../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const EditPostPage = (props) => {
     const [species, setSpecies] = useState('');
@@ -9,35 +11,40 @@ const EditPostPage = (props) => {
     const [method, setMethod] = useState('');
     const [location, setLocation] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    const { getAccessToken } = useAuth();
+    const navigate = useNavigate();
     
     async function onEditPostHandler(e) {
         e.preventDefault();
-        const url = `${props.baseUrl}/fishCatches/${props._id}`
+        const url = `${props.baseUrl}/fishCatches/${props._id}`;
         const formData = new FormData(e.target);
         const fishSpecies = formData.get('fishSpecies');
         const anglerName = formData.get('anglerName');
         const fishLength = formData.get('fishLength');
         const fishWeight = formData.get('fishWeight');
-        const bait = formData.get('bait');
-        const method = formData.get('method');
+        const lure = formData.get('lure');
+        const catchMethod = formData.get('catchMethod');
         const location = formData.get('location');
         const imageUrl = formData.get('imageUrl');
+        console.log({fishSpecies, anglerName, fishLength, fishWeight, lure, catchMethod, location, imageUrl})
 
-        if (!fishSpecies || !anglerName || !fishLength || !fishWeight || !bait || !method || !location || !imageUrl) {
+        if (!fishSpecies || !anglerName || !fishLength || !fishWeight || !lure || !catchMethod || !location || !imageUrl) {
             return alert('All fields are mandatory!');
         }
 
         try {
             const response = await fetch(url, {
-                method: "POST",
+                method: "PUT",
                 headers: {
-                    'Content-Type': 'application/json', 
+                    'Content-Type': 'application/json',
+                    'X-Authorization': getAccessToken()
                   },
-                body: JSON.stringify({fishSpecies, anglerName, fishLength, fishWeight, bait, method, location, imageUrl})
+                body: JSON.stringify({fishSpecies, anglerName, fishLength, fishWeight, lure, catchMethod, location, imageUrl})
             })
 
             if(response.ok) {
                 console.log("PUT request done")
+                props.setEditPopUp(!props.editPopUp)
             } else {
                 throw new Error(response.statusText);
             }

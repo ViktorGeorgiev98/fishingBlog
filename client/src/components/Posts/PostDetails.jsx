@@ -29,7 +29,7 @@ const PostDetails = () => {
         .then(response => response.json())
         .then(data => setPost(data))
         .catch((e) => console.log(e));
-    }, []);
+    }, [editPopUp]);
     useEffect(() => {
         fetch(`${baseUrl}/fishCatchesComments`)
         .then(response => response.json())
