@@ -59,6 +59,7 @@ const PostDetails = () => {
           if (response.ok) {
             const comment = await response.json();
             console.log({comment});
+            setComments(prevComments => [...prevComments, comment]);
           } else {
             throw new Error(response.statusText);
           }
@@ -66,6 +67,8 @@ const PostDetails = () => {
           console.log(e.message);
           return alert(e.message);
         }
+
+
     }
 
     async function postEditHandler(e) {
