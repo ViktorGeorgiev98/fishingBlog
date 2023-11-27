@@ -72,7 +72,7 @@ const PostDetails = () => {
           <p><strong>Catch Method:</strong> {post.catchMethod}</p>
           <p><strong>Location:</strong> {post.location}</p>
           <p><strong>Lure Used:</strong> {post.lure}</p>
-          {isAuthenticated() && user._id === post._id &&
+          {isAuthenticated() && user._id === post._ownerId &&
              <div className="post-btns">
                 <button className="btn-btn-delete" onClick={postDeleteHandler}>Delete</button>
                 <button className="btn-btn-edit" onClick={postEditHandler}>Edit</button>
