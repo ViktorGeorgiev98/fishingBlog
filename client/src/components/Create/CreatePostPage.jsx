@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthProvider";
 
 
 
 
 const CreatePostPage = () => {
     // State management and functions
+    const { getAccessToken } = useAuth();
     const navigate = useNavigate();
     const baseUrl = `http://localhost:3030`;
     const [species, setSpecies] = useState('');
@@ -30,7 +32,10 @@ const CreatePostPage = () => {
       const imageUrl = formData.get('imageUrl')
       const anglerName = formData.get('anglerName')
 
-      await validateInput(fishSpecies, fishLength, fishWeight, catchMethod, lure, location, imageUrl, anglerName);
+      const inputValid = await validateInput(fishSpecies, fishLength, fishWeight, catchMethod, lure, location, imageUrl, anglerName);
+      if (!inputValid) {
+        return alert("All fields are mandatory!");
+      }
       console.log( {
         fishSpecies, fishLength, fishWeight, catchMethod, lure, location, imageUrl, anglerName
       })
@@ -40,7 +45,7 @@ const CreatePostPage = () => {
     }
 
 
-    async function validateInput(fishSpecies, fishLength, fishWeight, catchMethod, lure, location) {
+    async function validateInput(fishSpecies, fishLength, fishWeight, catchMethod, lure, location, anglerName) {
       if (!fishSpecies 
         || !fishLength 
         || !fishWeight 
@@ -49,21 +54,31 @@ const CreatePostPage = () => {
         || !location 
         || !imageUrl 
         || !anglerName) {
-          return alert("All fields are mandatory!!!");
+          return false;
+        } else {
+          return true;
         }
     }
 
     async function makePostCreateRequest(fishSpecies, fishLength, fishWeight, catchMethod, lure, location, imageUrl, anglerName) {
       try {
-        const response = await fetch(`${baseUrl}/posts`, {
+        const response = await fetch(`${baseUrl}/data/fishCatches`, {
           method: "POST",
           headers: {
-            'Content-Type': 'application/json', 
+            'Content-Type': 'application/json',
+            'X-Authorization': getAccessToken() 
           },
           body: JSON.stringify({
             fishSpecies, fishLength, fishWeight, catchMethod, lure, location, imageUrl, anglerName
           })
       })
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log({data})
+      } else {
+        throw new Error(response.statusText);
+      }
       } catch(e) {
         return alert(e.message);
       }
