@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import EditPostPage from "./EditPostPage";
 import { useAuth } from "../../context/AuthProvider";
 
@@ -12,6 +12,7 @@ import { useAuth } from "../../context/AuthProvider";
 // 5/ Make comments post request and update the comments after the request
 // 6/ Make buttons and logic visible for logged in users and owners or no owners respectively
 const PostDetails = () => {
+    const navigate = useNavigate();
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
     const [showComments, setShowComments] = useState(false);
@@ -76,6 +77,28 @@ const PostDetails = () => {
     async function postDeleteHandler(e) {
         e.preventDefault();
         const id = e.target.id;
+        const confirmed = window.confirm('Are you sure you want to delete this item?');
+        if (confirmed) {
+          console.log({id});
+          try {
+            const response = await fetch(`${baseUrl}/fishCatches/${id}`, {
+              method: 'DELETE',
+              headers: {"Content-Type": "application/json",
+              "X-Authorization": getAccessToken()
+            }
+            });
+            if (response.ok) {
+              console.log("Deletion was successful");
+              navigate("/posts");
+            } else {
+              throw new Error(response.statusText);
+            }
+          } catch(e) {
+            console.log(e.message);
+            return alert(e.message);
+          }
+        }
+       
     }
     
 
@@ -94,8 +117,8 @@ const PostDetails = () => {
           <p><strong>Lure Used:</strong> {post.lure}</p>
           {isAuthenticated() && user._id === post._ownerId &&
              <div className="post-btns">
-                <button className="btn-btn-delete" onClick={postDeleteHandler}>Delete</button>
-                <button className="btn-btn-edit" onClick={postEditHandler}>Edit</button>
+                <button className="btn-btn-delete" id={id} onClick={postDeleteHandler}>Delete</button>
+                <button className="btn-btn-edit" id={id} onClick={postEditHandler}>Edit</button>
              </div>
           }
 
