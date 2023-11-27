@@ -32,7 +32,7 @@ const PostDetails = () => {
     useEffect(() => {
         fetch(`${baseUrl}/fishCatchesComments`)
         .then(response => response.json())
-        .then(data => setComments(data.filter(comment => comment._postId === id)))
+        .then(data => setComments(data.filter(comment => comment.refId === id)))
         .catch((e) => console.log(e));
     }, []);
 
@@ -44,6 +44,26 @@ const PostDetails = () => {
         const text = formData.get('comment')
         if (!name || !text) {
             return alert('Both name and comment fields are mandatory!');
+        }
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Authorization": getAccessToken()
+            },
+            body: JSON.stringify({name, text, refId: id})
+          })
+
+          if (response.ok) {
+            const comment = await response.json();
+            console.log({comment});
+          } else {
+            throw new Error(response.statusText);
+          }
+        } catch(e) {
+          console.log(e.message);
+          return alert(e.message);
         }
     }
 
