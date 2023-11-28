@@ -15,6 +15,7 @@ const Blog = () => {
             {createBlog  &&
                 <CreateBlog createBlog={createBlog} setCreateBlog={setCreateBlog} />
             }
+            
         </div>
     )
 }
