@@ -42,9 +42,9 @@ const Blog = () => {
                     ))}
                 </ul>
             }
-            {articleDetails && 
+            {/* {articleDetails && 
                 <BlogDetails />
-            }
+            } */}
             
         </div>
     )

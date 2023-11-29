@@ -15,6 +15,7 @@ import Logout from './components/Logout/Logout';
 import CreatePostPage from './components/Create/CreatePostPage';
 import PostDetails from './components/Posts/PostDetails';
 import { AuthProvider } from './context/AuthProvider';
+import BlogDetails from './components/Blog/BlogDetails';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/species'/>
           <Route path='/posts/create' element={<CreatePostPage />} />
           <Route path='/posts/:id/details' element={<PostDetails />} />
+          <Route path='/blog/:id/details' element={<BlogDetails />} />
           <Route path='*' element={<Error404NotFound />} />
         </Routes>
         <Footer />

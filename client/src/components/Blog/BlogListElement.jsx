@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const BlogListElement = (props) => {
@@ -8,7 +9,9 @@ const BlogListElement = (props) => {
             <img src={props.imageUrl} alt={props.shortDescription}></img>
             <p>Writer name: {props.writerName}</p>
             <p>About {props.shortDescription}</p>
-            <button className="btn-read-more" onClick={props.setArticleDetails(!props.articleDetails)} id={props.id}>Read more</button>
+            <Link to={`/blog/${props.id}/details`}>
+                <button className="btn-btn-read-more">Read more</button>
+            </Link>
         </li>
     )
 }
