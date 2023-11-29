@@ -33,6 +33,7 @@ const Blog = () => {
                         writerName={article.writerName} 
                         id={article._id} 
                         shortDescription={article.shortDescription} 
+                        imageUrl={article.imageUrl}
                         />
                     ))}
                 </ul>
