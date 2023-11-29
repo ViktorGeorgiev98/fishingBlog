@@ -22,7 +22,7 @@ function App() {
  
 
   return (
-    <>
+    <div className='content'>
       <AuthProvider>
         <Nav />
         <Routes >
@@ -44,7 +44,7 @@ function App() {
         <Footer />
       </AuthProvider>
       
-    </>
+    </div>
   )
 }
 

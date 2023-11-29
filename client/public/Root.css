@@ -12,6 +12,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+     /* Your main content styles */
+    min-height: calc(100vh - 40px); /* Adjust according to your footer height */
+    /* Subtract the footer height to keep the footer at the bottom */
+    padding-bottom: 40px; /* Adjust padding bottom to accommodate footer */
   }
   
   
