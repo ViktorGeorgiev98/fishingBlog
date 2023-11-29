@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import CreateBlog from "./CreateBlog";
 import BlogListElement from "./BlogListElement";
+import BlogDetails from "./BlogDetails";
 
 const Blog = () => {
     const [createBlog, setCreateBlog] = useState(false);
     const [articles, setArticles] = useState([]);
+    const [articleDetails, setArticleDetails] = useState(false);
 
     useEffect(() => {
         fetch('http://localhost:3030/data/fishBlogArticles')
@@ -29,6 +31,8 @@ const Blog = () => {
                 <ul className="articles">
                     {articles.map(article => (
                         <BlogListElement 
+                        articleDetails={articleDetails}
+                        setArticleDetails={setArticleDetails}
                         key={article._id}
                         writerName={article.writerName} 
                         id={article._id} 
@@ -37,6 +41,9 @@ const Blog = () => {
                         />
                     ))}
                 </ul>
+            }
+            {articleDetails && 
+                <BlogDetails />
             }
             
         </div>
