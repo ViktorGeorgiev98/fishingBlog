@@ -8,6 +8,7 @@ const BlogListElement = (props) => {
             <img src={props.imageUrl} alt={props.shortDescription}></img>
             <p>Writer name: {props.writerName}</p>
             <p>About {props.shortDescription}</p>
+            <button className="btn-read-more">Read more</button>
         </li>
     )
 }

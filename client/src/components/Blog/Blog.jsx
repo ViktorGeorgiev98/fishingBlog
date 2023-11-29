@@ -11,7 +11,7 @@ const Blog = () => {
         .then(response => response.json())
         .then(data => setArticles(data))
         .catch(error => console.log(error));
-    }, [])
+    }, [createBlog])
 
     return (
         <div className="blog-page">
