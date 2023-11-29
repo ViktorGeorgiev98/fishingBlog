@@ -1,0 +1,67 @@
+Error Page Styles
+#errorPage {
+    padding-top: 60px; /* Adjust to accommodate navbar height */
+  }
+  
+  .error-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Content Styles */
+  .dynamicContent {
+    position: relative;
+  }
+  
+  .inner {
+    margin-top: 30px;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-container {
+    position: absolute;
+    bottom: -20px; /* Adjust the initial position */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .image-container img {
+    width: 40000px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    animation: pulsate 2s infinite; /* Pulsating animation */
+    animation-delay: 1s; /* Delay for the pulsating effect */
+    animation-timing-function: ease-in-out; /* Smooth animation */
+    animation-fill-mode: both;
+    animation-direction: alternate; /* Make pulsating effect back and forth */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Smooth upward motion animation */
+  .image-container img {
+    animation: moveUp 1s forwards; /* Upward motion animation */
+  }
+  
+  @keyframes moveUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
