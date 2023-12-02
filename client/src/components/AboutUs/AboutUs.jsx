@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
     return (
-        <div id="wrapper">
-      <section className="container">
+        <div id="aboutUs">
+      <section className="aboutUs">
         <div className="dynamicContent">
           {/* content */}
           <div className="inner">
@@ -18,7 +18,16 @@ const AboutUs = () => {
                         Here you can create a profile and post any catches that you have, write blogs and like and comment other peoples posts.
                         This is a place where you can exchange valuable knowledge about this amazing hobby.
                     </span>
-                    <Link to='/register'>If this is something you like, feel free to register.</Link>
+                    <h3>If this is something you like, feel free to register:
+                      <button>
+                        <Link to='/register'>Register</Link>
+                      </button>
+                    </h3>
+                    <h3>If you already have a profile you can login from the link:
+                      <button>
+                      <Link to='/login'>Login</Link>
+                      </button>
+                    </h3>  
                 </p>
               </div>
             </div>
