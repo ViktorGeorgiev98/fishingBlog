@@ -21,6 +21,10 @@ header {
   header h1 a {
     color: white;
   }
+
+  header h2 {
+    color: white !important;
+  }
   
   /* Logo styles */
   h1 {
@@ -36,23 +40,26 @@ header {
     color: white;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 18px; /* Adjust font size as needed */
+    font-size: 24px; /* Adjust font size as needed */
     transition: color 0.3s ease; /* Smooth transition */
   }
   
   nav a:hover {
-    color: #ffd700; /* Bright yellow */
+    color: #ffd700;
+    transform: scale(1.1); /* 3D pop-up effect */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8); /* Bright yellow */
   }
   
   /* Dropdown styles */
   .dropdown {
     position: relative;
+    
   }
   
   .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 110%;
     left: 0;
     background-color: green;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -67,11 +74,14 @@ header {
   }
   
   .dropdown-content a:hover {
-    background-color: #333; /* Darker background on hover */
+    background-color: #333;
+   
   }
   
   .dropdown:hover .dropdown-content {
     display: block;
+    transform: scale(1.1); /* 3D pop-up effect */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8);
   }
   
   /* User and guest sections */
@@ -84,16 +94,20 @@ header {
     color: white;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 18px; /* Adjust font size as needed */
+    font-size: 24px; /* Adjust font size as needed */
   }
   
   /* Styling for active link */
   nav a.active {
     color: yellow;
+    transform: scale(1.1); /* 3D pop-up effect */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8);
   }
   
   /* Additional styling for user and guest sections */
   #user a:hover,
   #guest a:hover {
-    color: #ffd700; /* Bright yellow */
+    color: #ffd700; 
+    transform: scale(1.1); /* 3D pop-up effect */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8);/* Bright yellow */
   }

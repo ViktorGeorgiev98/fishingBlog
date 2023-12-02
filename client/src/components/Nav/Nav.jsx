@@ -9,7 +9,7 @@ const Nav = () => {
         <h1><Link className="home" to="/">Fishing Blog</Link></h1>
         {isAuthenticated()
             && 
-            <p>Welcome {user.username}!</p>
+            <h2>Welcome {user.username}!</h2>
             }
         <nav>
             <Link to='/posts'>Posts</Link>
