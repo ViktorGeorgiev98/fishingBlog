@@ -1,0 +1,59 @@
+/* Styling for the pike species page */
+.pike-species-page {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 2s ease forwards;
+  }
+  
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Styling for the span text */
+  .pike-species-page .pike-info span {
+    color: white !important;
+  }
+  
+  /* Styling for the image */
+  .pike-species-page .pike-img img {
+    max-width: 70%; /* Reduce image size */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center image */
+    border: 4px solid #fff; /* Optional: Adjust border style */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+  }
+  
+
+  /* Styling for links */
+  .pike-info a {
+    color: white; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .pike-info a:hover {
+    color: yellow; /* Color on hover */
+  }
+  
+  /* Styling for buttons */
+.pike-info button {
+    padding: 8px 16px;
+    border: 5px solid #4CAF50; /* Border style */
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Glowing effect */
+    margin-top: 15px; /* Space from the top */
+    margin-left: 15px;
+  }
+  
+  .pike-info button:hover {
+    background-color: #2ecc71; /* Green color */
+    transform: scale(1.1); /* 3D pop-up effect */
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8); /* Enhanced glowing effect on hover */
+  }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Pike = () => {
     return (
         <div className="pike-species-page">
@@ -11,6 +13,20 @@ const Pike = () => {
                     Ir grows to 1.30m long and 25kg. The best lures for it are big soft baits and jerks. Some people also catch it on so called spoons.
                 </span>
             </p>
+            <p className="pike-info">
+            <span>
+                If you want to learn even more about pikes, follow the link: 
+                <Link 
+                    to="https://en.wikipedia.org/wiki/Northern_pike" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                        <button>
+                        Pike Wikipedia
+                        </button>
+                    </Link>
+            </span>
+            </p>
+
         </div>
     )
 }
