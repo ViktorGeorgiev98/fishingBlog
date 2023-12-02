@@ -1,0 +1,81 @@
+/* Styles for the personal profile */
+.myProfile {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for individual personal posts */
+  .personal-posts {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Styling for individual personal posts */
+.personal-post {
+    width: calc(33.33% - 20px); /* 3 posts per row with some spacing */
+    margin: 10px;
+    background-color: rgba(50, 50, 50, 0.8); /* Dark gray transparent */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    animation: slideUp 2s ease forwards;
+    display: flex; /* Ensure contents are flex items */
+    flex-direction: column; /* Align content in a column */
+    justify-content: space-between; /* Space between elements */
+  }
+
+  .personal-post > div {
+    flex-grow: 1; /* Allow this div to grow and take available space */
+  }
+  
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Button styles */
+.btn-btn-details {
+    padding: 12px 24px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.7); /* Enhanced glowing effect */
+    align-self: flex-end; /* Align button to the end of its container */
+  }
+  
+  .btn-btn-details:hover {
+    background-color: #2ecc71; /* Green color */
+    transform: scale(1.2); /* 3D pop-up effect */
+    box-shadow: 0 0 30px rgba(46, 204, 113, 0.9); /* Stronger glowing effect on hover */
+  }
+  
+  /* Styling for the image */
+.personal-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px; /* Increase the gap between image and text */
+    max-height: 200px; /* Adjust the maximum height of the image */
+  }
+  
+  /* Styling for the text */
+  .personal-post p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px; /* Bigger font size */
+    margin-bottom: 12px; /* Increase spacing between paragraphs */
+    color: #fff; /* White text color */
+    font-weight: bold; /* Bold text */
+  }
+  

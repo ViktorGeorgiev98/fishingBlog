@@ -30,6 +30,7 @@ const MyProfile = () => {
                     <ul className="personal-posts">
                         {personalPosts.map(post => (
                             <li className="personal-post" key={post._id}>
+                                <img src={post.imageUrl} alt={post.fishSpecies}></img>
                                 <p>Fish species: {post.fishSpecies}</p>
                                 <p>Fish length: {post.fishLength}</p>
                                 <p>Location: {post.location}</p>

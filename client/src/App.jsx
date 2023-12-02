@@ -22,8 +22,9 @@ function App() {
  
 
   return (
-    <div className='content'>
+    <>
       <AuthProvider>
+        <div className='content'>
         <Nav />
         <Routes >
           <Route path='/' element={<HomePage />} />
@@ -41,10 +42,11 @@ function App() {
           <Route path='/blog/:id/details' element={<BlogDetails />} />
           <Route path='*' element={<Error404NotFound />} />
         </Routes>
+        </div>
         <Footer />
       </AuthProvider>
       
-    </div>
+    </>
   )
 }
 
