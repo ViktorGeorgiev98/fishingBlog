@@ -1,35 +1,60 @@
+/* Styling for individual posts */
 .post {
-    list-style: none;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .post img {
-    width: 100px; /* Adjust this as needed */
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .post p {
-    margin: 5px 0;
-    color: white;
-  }
-  
-  .btn-details {
-    padding: 8px 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-details:hover {
-    background-color: #357a38;
-  }
-  
+  width: calc(30% - 20px); /* Adjust the width here */
+  margin-right: 20px; /* Adjust spacing between posts */
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+/* Dark gray frame for individual posts */
+.post {
+  background-color: rgba(50, 50, 50, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the image */
+.post img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  max-height: 200px;
+}
+
+/* Styling for post content */
+.post p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Styling for the buttons */
+.post .btn-btn-details {
+  padding: 12px 24px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+  display: block;
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.post .btn-btn-details:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.9);
+}

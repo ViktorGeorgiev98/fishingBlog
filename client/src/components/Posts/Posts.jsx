@@ -17,23 +17,29 @@ const Posts = () => {
   return (
     <>
       <h1>Posts</h1>
-      <div className="all-posts">
-        <ul className="list-posts">
-          {posts.length <= 0 
-            ? <p className="no-posts">There are no posts at the moment...</p>
-            : posts.map(post => (
-               <PostListElement key={post._id}
-               id={post._id} 
-               imageUrl={post.imageUrl} 
-               fishSpecies={post.fishSpecies} 
-               anglerName={post.anglerName} 
-               fishLength={post.fishLength} 
-               catchMethod={post.catchMethod} 
-               lure={post.lure} 
-               location={post.location} />
-              ))}
-        </ul>
-      </div>
+<div className="all-posts">
+  <ul className="list-posts">
+    {posts.length <= 0 ? (
+      <p className="no-posts">There are no posts at the moment...</p>
+    ) : (
+      posts.map(post => (
+        <li className="post-container" key={post._id}>
+          <PostListElement
+            id={post._id}
+            imageUrl={post.imageUrl}
+            fishSpecies={post.fishSpecies}
+            anglerName={post.anglerName}
+            fishLength={post.fishLength}
+            catchMethod={post.catchMethod}
+            lure={post.lure}
+            location={post.location}
+          />
+        </li>
+      ))
+    )}
+  </ul>
+</div>
+
     </>
   );
 }
