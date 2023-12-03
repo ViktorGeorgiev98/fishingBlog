@@ -1,82 +1,198 @@
-/* Common styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* Updated styling for the button */
+.btn-show-comments {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Styles for the details container */
-.details-container {
-  animation: slideUp 1s ease forwards;
-  opacity: 0;
+.btn-show-comments::before {
+  content: '';
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 90%;
-  z-index: 1000;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.btn-show-comments:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-show-comments:hover {
+  background-color: #2ecc71; /* Lighter green color on hover */
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.7);
+}
+
+/* Styling for the comments section */
+#comments {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(58, 66, 58, 0.3); /* Green transparent background */
+  border-radius: 5px;
+}
+
+.comments {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  /* background-color: rgba(46, 204, 113, 0.3); Green transparent background */
+  border-radius: 5px;
+}
+
+.comment p {
+  margin: 5px 0;
+  color: white; /* White text color */
+  font-size: 20px; /* Adjust font size */
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333; /* Dark gray background color */
+  padding: 20px; /* Adjusted padding */
+  margin: auto;
+  border-radius: 20px;
+  width: 35%; /* Form width set to half */
+  height: 400px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  transform: translateY(100%);
+  animation: slideUp 1s forwards;
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateX(-50%) translateY(100%);
-    opacity: 0;
-  }
   to {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+    transform: translateY(0%); /* Move the form to its original position */
   }
 }
 
-/* Heading styles */
-h1, h2 {
-  margin-bottom: 15px;
+#commentForm h2 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 2.7rem;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 30px;
 }
 
-h1 {
-  font-size: 24px;
+/* Input field styles within the form */
+#commentForm .user-box {
+  position: relative;
+  margin-bottom: 30px;
 }
 
-h2 {
-  font-size: 20px;
-}
-
-/* Image styles */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 15px;
-}
-
-/* Paragraph styles */
-p {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-/* Form styles */
-form {
-  margin-bottom: 15px;
-}
-
-textarea {
-  width: calc(100% - 16px);
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-}
-
-input[type="submit"] {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
+#commentForm input[type="text"],
+#commentForm textarea {
+  width: 100%;
+  padding: 10px; /* Adjusted padding */
+  font-size: 16px; /* Adjusted font size */
+  color: black;
+  margin-top: 5px; /* Adjusted margin */
+  border-radius: 8px; /* Adjusted border radius */
   border: none;
-  border-radius: 5px;
+  outline: none;
+  transition: box-shadow 0.3s, transform 0.3s;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+#commentForm label {
+  position: static;
+  top: -20px; /* Move labels above the input fields */
+  left: 20px;
+  padding: 10px 0;
+  font-size: 16px; /* Decrease label font size */
+  color: green; /* Change label text color */
+  pointer-events: none;
+  transition: .3s ease-in-out; /* Add transition for label animation */
+}
+
+/* Styling for labels and inputs within the form */
+#commentForm label,
+#commentForm input {
+  color: #ddd; /* Set the text color to light gray */
+}
+
+/* Modify label animation on input focus */
+#commentForm input:focus ~ label,
+#commentForm textarea:focus ~ label,
+#commentForm input:valid ~ label,
+#commentForm textarea:valid ~ label {
+  top: -40px;
+  font-size: 16px; /* Adjust font size on focus */
+}
+
+/* Hover effect for input fields within the form */
+#commentForm input:hover,
+#commentForm textarea:hover {
+  box-shadow: inset 10px 10px 10px #1e824c, inset -10px -10px 10px #4ae06f; /* Strengthen shadow on hover */
+  transform: translate(4px, 4px); /* Increase movement on hover */
+}
+
+/* Submit button styles within the form */
+#commentForm input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  color: white;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 30px;
+  border-radius: 20px;
   cursor: pointer;
+  background: #778e9c;
+  border: none;
+  outline: none;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+}
+
+/* Submit button hover styles within the form */
+#commentForm input[type="submit"]:hover {
+  background: #1e824c; /* Change button color on hover */
+  box-shadow: 10px 10px 10px #4ae06f, -10px -10px 10px white; /* Adjust shadow on hover */
+  transform: translate(4px, 4px); /* Increase movement on hover */
+}
+
+
+#commentForm label[for="name"],
+#commentForm label[for="comment"] {
+  font-size: 16px;
 }
