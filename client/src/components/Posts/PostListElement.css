@@ -7,6 +7,18 @@
   vertical-align: top;
   box-sizing: border-box;
   padding: 0 10px;
+  animation: slideUp 2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Dark gray frame for individual posts */
