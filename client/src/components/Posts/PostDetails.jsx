@@ -107,6 +107,7 @@ const PostDetails = () => {
 
     return (
         <div className="details-container">
+          <div className="fish-details">
           <h1>Fish Details</h1>
           <img src={post.imageUrl} alt={post.fishSpecies} />
           
@@ -125,6 +126,7 @@ const PostDetails = () => {
              </div>
           }
 
+          </div>
           {isAuthenticated() &&
             <div>
               <h2>Comments</h2>

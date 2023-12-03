@@ -196,3 +196,85 @@
 #commentForm label[for="comment"] {
   font-size: 16px;
 }
+
+
+
+
+
+
+/* Styling for the Fish Details section */
+.fish-details {
+  width: calc(30% - 20px); /* Adjust the width here */
+  margin-right: 60px; /* Adjust spacing between sections */
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 0 10px;
+  animation: slideUp 2s ease;
+  width: 100%;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark gray frame for the Fish Details section */
+.fish-details {
+  background-color: rgba(50, 50, 50, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the image */
+.fish-details img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  max-height: 200px;
+}
+
+/* Styling for the details content */
+.fish-details p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* Styling for the buttons */
+.fish-details .btn-btn-delete,
+.fish-details .btn-btn-edit {
+  padding: 12px 24px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+  display: inline;
+  margin-top: auto;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.fish-details .btn-btn-delete:hover,
+.fish-details .btn-btn-edit:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.9);
+}
+
