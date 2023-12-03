@@ -1,7 +1,7 @@
 /* Styling for individual posts */
 .post {
   width: calc(30% - 20px); /* Adjust the width here */
-  margin-right: 20px; /* Adjust spacing between posts */
+  margin-right: 60px; /* Adjust spacing between posts */
   margin-bottom: 20px;
   display: inline-block;
   vertical-align: top;
@@ -44,7 +44,7 @@
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   margin-bottom: 12px;
-  color: #fff;
+  color: #fff !important;
   font-weight: bold;
 }
 
@@ -57,9 +57,9 @@
   cursor: pointer;
   transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
   box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
-  display: block;
+  display: inline;
   margin-top: auto;
-  width: 100%;
+  width: 50%;
   text-align: center;
   border-radius: 5px;
   margin-top: 10px;

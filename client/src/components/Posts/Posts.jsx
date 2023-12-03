@@ -23,8 +23,8 @@ const Posts = () => {
       <p className="no-posts">There are no posts at the moment...</p>
     ) : (
       posts.map(post => (
-        <li className="post-container" key={post._id}>
           <PostListElement
+            key={post._id}
             id={post._id}
             imageUrl={post.imageUrl}
             fishSpecies={post.fishSpecies}
@@ -34,7 +34,6 @@ const Posts = () => {
             lure={post.lure}
             location={post.location}
           />
-        </li>
       ))
     )}
   </ul>
