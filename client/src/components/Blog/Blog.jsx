@@ -12,14 +12,20 @@ const Blog = () => {
 
     useEffect(() => {
         fetch('http://localhost:3030/data/fishBlogArticles')
-        .then(response => response.json())
-        .then(data => setArticles(data))
-        .catch(error => {
-            console.log(error);
-            setArticles([]);
-        });
-    }, [createBlog])
-
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => setArticles(data))
+            .catch(error => {
+                console.error('Fetch error:', error);
+                // Handle the error gracefully without crashing the app
+                setArticles([]);
+            });
+    }, [createBlog]);
+    console.log({articles})
     return (
         <div className="blog-page">
             <h1>Blog</h1>

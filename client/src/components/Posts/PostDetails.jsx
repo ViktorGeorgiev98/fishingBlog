@@ -108,7 +108,7 @@ const PostDetails = () => {
     return (
         <div className="details-container">
           <div className="fish-details">
-          <h1>Fish Details</h1>
+          <h1>Catch Details</h1>
           <img src={post.imageUrl} alt={post.fishSpecies} />
           
           <h2>Details</h2>

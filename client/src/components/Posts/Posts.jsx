@@ -4,18 +4,22 @@ import PostListElement from "./PostListElement";
 const Posts = () => {
   const baseUrl = `http://localhost:3030`;
   const [posts, setPosts] = useState([]);
-  // 3f9c969801286f797eb73a43f108c533e4e77f12986a5b536546c8783316fa31
   useEffect(() => {
     fetch(`${baseUrl}/data/fishCatches`)
-      .then(response => response.json())
-      .then(data => setPosts(data))
-      .catch(e => {
-        console.log(e);
-        setPosts([]);
-      });
-  }, []);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => setPosts(data))
+        .catch(error => {
+            console.error('Fetch error:', error);
+            // Handle the error gracefully without crashing the app
+            setPosts([]);
+        });
+}, []);
 
-  console.log(posts);
 
   return (
     <>
