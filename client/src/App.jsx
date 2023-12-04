@@ -17,6 +17,7 @@ import PostDetails from './components/Posts/PostDetails';
 import { AuthProvider } from './context/AuthProvider';
 import BlogDetails from './components/Blog/BlogDetails';
 import AuthGuard from './routeGuards/AuthGuards';
+import GuestGuard from './routeGuards/GuestGuard';
 
 
 function App() {
@@ -30,21 +31,22 @@ function App() {
         <Routes >
           <Route path='/' element={<HomePage />} />
           <Route path='/posts' element={<Posts />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/pike' element={<Pike />} />
           <Route path='/species'/>
-        
           <Route path='/posts/:id/details' element={<PostDetails />} />
           <Route path='/blog/:id/details' element={<BlogDetails />} />
-          <Route path='*' element={<Error404NotFound />} />
           <Route element={<AuthGuard />}>
             <Route path='/posts/create' element={<CreatePostPage />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/myProfile' element={<MyProfile />} />
           </Route>
+          <Route element={<GuestGuard />}>
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+          </Route>
+          <Route path='*' element={<Error404NotFound />} />
         </Routes>
         </div>
         <Footer />
