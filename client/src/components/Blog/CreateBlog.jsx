@@ -42,10 +42,10 @@ const CreateBlog = (props) => {
     }
 
     return (
-        <div className="edit-modal">
-        <div className="edit-modal-content">
+        <div className="add-blog">
+        <div className="add-blog-content">
           <h2>Create blog</h2>
-          <form className="post-edit-form" onSubmit={createArticleHandler} >
+          <form className="blog-add-form" onSubmit={createArticleHandler} >
             <label htmlFor="imageUrl">Image URL</label>
             <input type="text" name="imageUrl" id="imageUrl" onChange={(e) => setImageUrl(e.currentTarget.value)}></input>
 
@@ -60,7 +60,7 @@ const CreateBlog = (props) => {
              />
 
             <label htmlFor="text">Text</label>
-            <textarea id="text" name="text"
+            <textarea id="text" name="text" minLength="50" maxLength="1000"
             onChange={(e) => setText(e.currentTarget.value)}
              />
              <button className="btn-post" type="submit">Post</button>

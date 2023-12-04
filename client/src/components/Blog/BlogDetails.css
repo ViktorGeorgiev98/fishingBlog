@@ -1,0 +1,41 @@
+/* Specific styling for .btn-btn-read-more */
+.btn-btn-read-more {
+    padding: 15px 20px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #778e9c;
+    transition: .5s;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  }
+  
+  .btn-btn-read-more:hover {
+    background: #1e824c;
+    box-shadow: 10px 10px 10px #4ae06f, -10px -10px 10px white;
+    transform: translate(4px, 4px);
+  }
+
+  
+  .edit-modal-content img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust the maximum height as needed */
+  }
+
+  .edit-modal-content h2,
+.edit-modal-content p {
+  color: white !important; 
+  font-size: 24px; /* Adjust the font size as needed */
+  font-style: italic;
+}
+
+  

@@ -13,3 +13,6 @@
 @import "../src/components/Species/Pike.css";
 /* @import "../src/components/404/Error404.css"; */
 @import "../src/components/Posts/PostDetails.css";
+@import "../src/components/Blog/Blog.css";
+@import "../src/components/Blog/CreateBlog.css";
+@import "../src/components/Blog/BlogDetails.css";
