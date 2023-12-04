@@ -41,27 +41,60 @@
   padding: 10px;
   background-color: rgba(58, 66, 58, 0.3); /* Green transparent background */
   border-radius: 5px;
+  overflow: hidden; /* Ensure contents don't overflow */
+  width: 50%; /* Set the comments container to half the width */
+  margin: 0 auto; /* Center align the container */
 }
 
 .comments {
   list-style-type: none;
   padding: 0;
+  animation: slideIn 2s ease-out; /* Animation applied to .comments */
 }
 
 .comment {
   margin-bottom: 15px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
-  /* background-color: rgba(46, 204, 113, 0.3); Green transparent background */
   border-radius: 5px;
+  animation: slideIn 2s ease-out; /* Animation applied to each .comment */
+  width: 100%; /* Make each comment container half the width */
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
-.comment p {
+.comment p,
+.comment textarea {
   margin: 5px 0;
   color: white; /* White text color */
   font-size: 20px; /* Adjust font size */
   font-weight: bolder;
+  animation: fadeIn 2s ease-out; /* Fade-in animation for text */
 }
+
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 
 
 

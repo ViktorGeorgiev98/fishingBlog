@@ -60,6 +60,8 @@ const PostDetails = () => {
             const comment = await response.json();
             console.log({comment});
             setComments(prevComments => [...prevComments, comment]);
+            setCommentWriter("");
+            setCommentText("");
           } else {
             throw new Error(response.statusText);
           }
