@@ -28,6 +28,8 @@ const Logout =  () => {
               }
             } catch (e) {
               console.log(e.message);
+              logout();
+              navigate("/");
               return alert(e.message);
             }
           };
