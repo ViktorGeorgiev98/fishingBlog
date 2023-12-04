@@ -53,9 +53,9 @@
   animation: fadeInUp 2s ease forwards;
 }
 
-.blog-page .articles li {
+/* .blog-page .articles li {
   /* Styles for each article element */
-}
+/* } */ */
 
 .blog-page h2 {
   /* Styles for the "No articles at the moment" message */
