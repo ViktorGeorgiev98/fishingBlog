@@ -42,8 +42,8 @@ const CreateBlog = (props) => {
     }
 
     return (
-        <div className="add-blog">
-        <div className="add-blog-content">
+        <div className="edit-modal">
+        <div className="edit-modal-content">
           <h2>Create blog</h2>
           <form className="blog-add-form" onSubmit={createArticleHandler} >
             <label htmlFor="imageUrl">Image URL</label>

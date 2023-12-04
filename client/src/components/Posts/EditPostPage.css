@@ -23,6 +23,20 @@
   overflow-y: auto; /* Enable vertical scrolling for the modal content */
 }
 
+/* Input field styles */
+.edit-modal-content input[type="text"],
+.edit-modal-content textarea {
+  width: 100% !important;
+  padding: 15px 20px !important;
+  font-size: 24px !important;
+  color: black !important;
+  margin-top: 10px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  outline: none !important;
+  transition: box-shadow 0.3s, transform 0.3s !important;
+}
+
 
 /* @keyframes slideUp {
   to {
@@ -89,6 +103,22 @@
   box-shadow: inset 10px 10px 10px #1e824c, inset -10px -10px 10px #4ae06f;
   transform: translate(4px, 4px);
 }
+
+/* Modify label animation on textarea focus */
+.edit-modal-content form textarea:focus ~ label,
+.edit-modal-content form textarea:valid ~ label {
+  top: -40px;
+  font-size: 16px;
+}
+
+/* Hover effect for textarea */
+.edit-modal-content form textarea:hover {
+  box-shadow: inset 10px 10px 10px #1e824c, inset -10px -10px 10px #4ae06f;
+  transform: translate(4px, 4px);
+}
+
+
+
 
 /* Submit button styles */
 .edit-modal-content form button {
