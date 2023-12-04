@@ -14,7 +14,10 @@ const Blog = () => {
         fetch('http://localhost:3030/data/fishBlogArticles')
         .then(response => response.json())
         .then(data => setArticles(data))
-        .catch(error => console.log(error));
+        .catch(error => {
+            console.log(error);
+            setArticles([]);
+        });
     }, [createBlog])
 
     return (

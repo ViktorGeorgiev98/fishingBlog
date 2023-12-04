@@ -9,7 +9,10 @@ const Posts = () => {
     fetch(`${baseUrl}/data/fishCatches`)
       .then(response => response.json())
       .then(data => setPosts(data))
-      .catch((e) => console.log(e));
+      .catch(e => {
+        console.log(e);
+        setPosts([]);
+      });
   }, []);
 
   console.log(posts);
