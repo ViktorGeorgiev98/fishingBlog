@@ -7,19 +7,31 @@ This is a fishing blog website designed for sharing photos of your best catches 
 The website uses authentication so in order to have access to the whole website technicalities you will need to register and log in.
 
 Unregistered user can do the following : 
+
 1/ View posts and comments for each post, but he cannot comment, edit or delete any posts. 
+
 2/ View Blog page with each blog, but he will not be able to post new articles
+
 3/ He will not be able to create new posts
+
 4/ He can see about, home, log in, register, details page.
+
 5/ He can also see individual species page with some general information about the species and link to more information.
 
 
+
 Log in users will have access to the following : 
+
 1/ They will see logout, have greeting with their username and have access to the more advanced technicality
+
 2/ They can post new posts and articles
+
 3/ They can comment posts
+
 4/ They can edit or delete their personal posts
+
 5/ They have access to their personal profile page where they have their catches sorted by biggest.
+
 6/ They can logout
 
 
