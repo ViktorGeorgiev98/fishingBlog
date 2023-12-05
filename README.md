@@ -27,20 +27,32 @@ In order to register you need to just write an email that is unique and password
 
 # Pages
 Home
+
 Posts
+
 Blog
+
 Post details
+
 Register
+
 Login
+
 Logout
+
 About
+
 Individual species
+
 My profile
+
 Create post
 
 # Test account
 You can use the following account for testing : 
+
 email : peter@abv.bg
+
 password : 123456
 
 # Initialization
