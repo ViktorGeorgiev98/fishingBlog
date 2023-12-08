@@ -1,6 +1,6 @@
 /* Styling for individual posts */
 .blog-page .articles li {
-    width: calc(60% - 20px); /* Adjust the width here */
+    width: 300px; /* Adjust the width here */
     margin-right: 60px; /* Adjust spacing between posts */
     margin-bottom: 20px;
     display: inline-block;

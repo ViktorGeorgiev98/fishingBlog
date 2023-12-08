@@ -1,13 +1,14 @@
 /* Styling for individual posts */
 .post {
   width: calc(30% - 20px); /* Adjust the width here */
-  margin-right: 60px; /* Adjust spacing between posts */
+  margin-right: 30px; /* Adjust spacing between posts */
   margin-bottom: 20px;
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
   padding: 0 10px;
   animation: slideUp 2s ease;
+  min-width: 300px;
 }
 
 @keyframes slideUp {
