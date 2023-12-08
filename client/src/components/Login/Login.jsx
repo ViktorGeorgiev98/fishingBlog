@@ -34,7 +34,7 @@ const Login = () => {
           }
         } catch (e) {
           console.log(e.message);
-          return alert(e.message);
+          return alert("Email or password is not correct!");
         }
         navigate('/');
     }

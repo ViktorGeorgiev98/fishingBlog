@@ -37,7 +37,7 @@ const Register = () => {
           }
         } catch(e) {
           console.log(e.message);
-          return alert(e.message);
+          return alert("Email might already exist!");
         }
         navigate('/login')
     }
