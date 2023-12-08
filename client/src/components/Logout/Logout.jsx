@@ -30,7 +30,6 @@ const Logout =  () => {
               console.log(e.message);
               logout();
               navigate("/");
-              return alert(e.message);
             }
           };
       
