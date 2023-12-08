@@ -14,11 +14,11 @@
   list-style: none;
 }
 
-.post-container {
+/* .post-container {
   width: calc(33.33% - 20px);
   margin: 10px;
   opacity: 0;
-}
+} */
 
 @keyframes fadeInUp {
   0% {

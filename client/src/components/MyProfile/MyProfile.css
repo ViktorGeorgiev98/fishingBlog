@@ -9,16 +9,15 @@
   
   /* Styling for individual personal posts */
   .personal-posts {
-    list-style: none;
-    padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
   }
   
   /* Styling for individual personal posts */
 .personal-post {
-    width: calc(33.33% - 20px); /* 3 posts per row with some spacing */
+    width: 200px !important; /* 3 posts per row with some spacing */
     margin: 10px;
     background-color: rgba(50, 50, 50, 0.8); /* Dark gray transparent */
     padding: 20px;
@@ -27,14 +26,15 @@
     transform: translateY(100px);
     opacity: 0;
     animation: slideUp 2s ease forwards;
-    display: flex; /* Ensure contents are flex items */
+    display: inline-block; /* Ensure contents are flex items */
     flex-direction: column; /* Align content in a column */
     justify-content: space-between; /* Space between elements */
+    min-width: 300px;
   }
 
-  .personal-post > div {
-    flex-grow: 1; /* Allow this div to grow and take available space */
-  }
+  /* .personal-post > div { */
+    /* flex-grow: 1; Allow this div to grow and take available space */
+  /* } */
   
   @keyframes slideUp {
     to {
